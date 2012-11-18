@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkService.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,25 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    Item *item = [[Item alloc] init];
+    item.name = @"VIP";
+    item.status = @"I totally am fine…";
+    
+//    [[NetworkService sharedService] createFriend:item success:^(Item *item) {
+//        ;
+//    } failure:^{
+//        ;
+//    }];
+
+    [[NetworkService sharedService] put];
+    
+//    [[NetworkService sharedService] updateFriend:item withImage:[UIImage imageNamed:@"uploadImage"] success:^(Item *item) {
+//        ;
+//    } failure:^{
+//        ;
+//    }];
+    
     return YES;
 }
 
